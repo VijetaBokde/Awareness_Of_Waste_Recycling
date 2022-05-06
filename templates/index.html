@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page With Light/Dark Mode</title>
+  <link rel="stylesheet" href="{{ url_for("static",filename="css/style.css") }}" />
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+     <!--favicon link-->
+     <link rel="shortcut icon" href="{{ url_for("static",filename="images/logo.png") }}" type="image/x-icon" />
+     
+</head>
+
+<body>
+  <main>
+    <div class="big-wrapper light">
+      <img src="{{ url_for("static",filename="images/Forest-bro.png") }}" alt="" class="shape" />
+      <header>
+        <div class="container">
+          <div class="logo">
+            <img src="{{ url_for("static",filename="images/logo.png") }}" alt="Logo" />
+            <h3>Waste Recycling</h3>
+          </div>
+
+          <div class="links">
+            <ul>
+              <li><a href="./index.html" id="active">Home</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./classify.html">Classify</a></li>
+            </ul>
+          </div>
+
+          <div class="overlay"></div>
+
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="showcase-area">
+        <div class="container">
+          <div class="left">
+            <div class="big-title">
+              <h1>Awareness of</h1>
+              <h1>Waste Recycling</h1>
+            </div>
+            <p class="text">
+              <b>This web application can classify waste with  different types of waste materials and it will show you the
+                details of that particular waste materials and also will show you the waste materials related videos. This will help to raise awareness for people to reduce and
+                recycle waste.</b>
+            <div class="cta">
+              <a href="./classify.html" class="btn">Get started</a>
+            </div>
+          </div>
+
+          <div class="right">
+            <img src="{{ url_for("static",filename="images/Recycling-bro .png") }}" alt="Person Image" class="person" />
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-area">
+        <div class="container">
+          <button class="toggle-btn">
+            <i class="far fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- JavaScript Files -->
+
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  <script src="{{ url_for("static",filename="js/script.js") }}"></script>
+</body>
+
+</html>

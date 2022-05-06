@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Awareness of Waste Recycling</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!--fontawesome link-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://use.fontawesome.com/305ad9003c.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
+  <!--css link-->
+  <link rel="stylesheet" href="{{ url_for("static",filename="css/classify.css") }}" />
+ <!--favicon link-->
+ <link rel="shortcut icon" href="{{ url_for("static",filename="images/logo.png") }}" type="image/x-icon">
+ {{ JSGlue.include() }} <!-- this is use for use url_for() from javascript -->	
+</head>
+<body>
+  <!--navigation bar-->
+  <header class="header">
+    <div class="logo">
+      <img src="{{ url_for("static",filename="images/logo.png") }}" alt="Logo" />
+     <b>Waste Recycling</b>
+    </div>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./classify.html" class="active">Classify</a></li>
+    </ul>
+  </header>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="errorPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content classy_frame" style="background-color: #fff;;">
+        <div class="modal-header">
+          <p class="modal-title" id="errorTitle" style="color:#000;font-size:large;">Modal title</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#000;font-size:large;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="color:#000; font-size:medium;" id="errorMessage" style="color:wheat;"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #6ec526; color: #000;">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="loading">
+    <h3 style="text-align: center;">Wait a second your messy waste is classifying...</h3>
+  </div>
+
+  
+
+<div class="container">
+  <br><br><br><br>
+	<div class="row">
+    <div class="col-md-6 classy_frame" style="padding-top: 0%; background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);">
+      <center><h3 style="text-transform: capitalize;">Classify Your Waste Material</h3></center>
+      <img id="preview" src="./static/images/reuse.png" height="400px" width="100%" title = "client pic">
+      <center>
+    
+        <div class="image-upload">
+          <p style="color:black;" id="upload-web"><b> Click the image upload icon below to upload a image.</b></p style="color:wheat;">
+          <p style="color:black;" id="upload-mobile">Click the camera icon below to click a image.</p style="color:wheat;">
+          
+          <label for="file">
+              <img id="upload-web" src="/static/images/upload.png"/>
+              <img id="upload-mobile" src="/static/images/camera.png"/>
+
+          </label>
+          <input type="file" name="file" id="file" onchange="previewImage()">
+        </div>
+
+        <br>
+        <button class="classify-button" onclick="classifyWaste()">Classify</button>
+      </center>
+      <br>
+    </div>
+    <div class="col-md-6 classy_frame" style="padding-top: 0%;">
+      <img src="/static/images/awareness_of_waste_recycling.png" class="right-image" alt="">
+      </div>
+</div>
+
+
+    <div class="col-md-12 classy_frame" style="padding-top: 0%;" id="about">
+      <center><h3 style="text-transform: capitalize;">About</h3></center>
+      <h4>The world generates at least 3.5 million tons of waste per day and this number is still increasing day by day
+        that's why we need to aware about waste.<br><br>This app is help you to classify your waste with 9 different waste materials.
+        The recycling process of these waste materials are very hard and even it's very difficult to classify these 9 different waste
+        materials at recycling factory.<br><br>But what if every people make 9 trash for 9 different waste materials and put the waste to the 
+        particular trash according to that waste materials this would be much more better for cleaners and recycling factory to classify 
+        and recycle the waste. Everyone should do this because around 70% of waste are not recycled just because that was not classified.
+        <br><br><br><br><br><br>
+      </h4>
+    </div>
+  </div>
+
+	<div class="row" id="recycling-videos">
+    <br>
+    <hr>
+    <h3 id="video-title"></h3>
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%; padding-bottom: 2%;">
+      <div class="embed-responsive embed-responsive-16by9"> 
+        <iframe id="video1" width="560" height="315" src="https://www.youtube.com/embed/zO3jFKiqmHo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%; padding-bottom: 2%;">
+      <div class="embed-responsive embed-responsive-16by9"> 
+        <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/I_fUpP-hq3A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+	<div class="row" id="what-if">
+    <br>
+    <hr>
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%; padding-bottom: 2%;">
+      <center><h2 style="text-transform: capitalize;">What If We Stopped Recycling?</h2></center>
+
+      <div class="embed-responsive embed-responsive-16by9"> 
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8fFJOzXxB54" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%; padding-bottom: 2%;">
+      <center><h2 style="text-transform: capitalize;">What If We Created No Waste?</h2></center>
+
+      <div class="embed-responsive embed-responsive-16by9"> 
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wWbL7Mv2MFw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  
+	<div class="row" id="motivation">
+    <br>
+    <hr>
+    <center><h3>Why We Need Awareness</h3></center>
+    <div class="col-md-12 classy_frame" style="padding-top: 0%; padding-bottom: 2%;">
+      <div class="embed-responsive embed-responsive-16by9"> 
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/NhF4pXBNfq8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="quotes">
+    <br>
+    <hr>
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%;">
+      <h4>They don’t dive into the swimming pool they dive into the mud. We can't even imagine how they would feel.<br> &nbsp;</h4>
+    </div>
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%;">
+      <h4>Your one step to waste recycling can make a cleaner’s life 10 minutes better.<br> &nbsp;</h4>
+    </div>
+  </div>
+</div>
+
+ <!-- footer section -->
+ <footer id="contact">
+  <p>&copy Copyright 2022, All Rights Reserved.</p>
+</footer>
+<script src="{{ url_for("static",filename="js/classify.js") }}"></script>
+</body>
+</html>

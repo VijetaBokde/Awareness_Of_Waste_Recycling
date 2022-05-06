@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Awareness of Waste Recycling</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--fontawesome link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
+    <!--css link-->
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/about.css") }}" />
+    <!--favicon link-->
+    <link rel="shortcut icon" href="{{ url_for("static",filename="images/logo.png") }}" type="image/x-icon" />
+  
+</head>
+
+<body>
+    <!--navigation bar-->
+    <header class="header">
+        <div class="logo">
+            <img src="{{ url_for("static",filename="images/logo.png") }}" alt="Logo" />
+            <b>Waste Recycling</b>
+        </div>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html" class="active">About</a></li>
+            <li><a href="./classify.html">Classify</a></li>
+        </ul>
+    </header>
+
+
+    <div class="l">
+        <h1 class="text-light" style="font-size: 40px;"><strong>"Awareness Of Waste Recycling"</strong></h1><br>
+        <p style="font-size: 25px; color: #fff;"><strong>The device is capable of detecting ,
+            identifying and classifying waste items without any human intervention.</strong> 
+        </p>
+    </div>
+    
+    <!--about section-->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                    <div class="inner-column">
+                        <div class="sec-title">
+                            <span class="title">About Our Project</span>
+                            <h2>Waste<br>Recycling</h2>
+                        </div>
+                        <div class="text">The world generates at least 3.5 million tons of waste per day and this number
+                            is still increasing day by day that's why we need to aware about waste. <br>
+                            The main purpose of our project is to classify wastes with high performance. <br>
+                            In many countries people dispose of their waste without classifying it, so countries need to
+                            establish facilities to classify waste. <br>
+                            It is important for the economy of the country that these wastes are classified with high
+                            performance.
+                            Because the more accurate the classification of waste, the more they can contribute to their
+                            economy.
+
+                        </div>
+
+                        <div class="btn-box">
+                            <a href="./classify.html" class="theme-btn btn-style-one">Classify</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Column -->
+                <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInLeft">
+                        <figure class="image-1"><a href="#" class="lightbox-image" data-fancybox="images"><img
+                                    src="{{ url_for("static",filename="images/image-1.png") }}" alt=""></a></figure>
+                        <figure class="image-2"><a href="#" class="lightbox-image" data-fancybox="images"><img
+                                    src="{{ url_for("static",filename="images/image-2.jpg") }}" alt=""></a></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5" style="margin-bottom: 60px;">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img src="{{ url_for("static",filename="images/dustbin_index.jpg") }}"
+                    class="img-fluid" style="box-shadow: 0 0 15px #eee;" alt="" />
+            </div>
+                <p class="text-secondary" style="font-size: 16px;line-height: 26px;color: #848484;
+                font-weight: 400; margin-top: 40px;">The prime motivation behind this project has been the
+                    problem that affects us all i.e Waste Management. The million tons of waste that are generated
+                    everyday, do not get properly
+                    segreagted and as a result large portion are mixed and are dumped in landmines. This ultimately
+                    piles up and their effect on the environment esp. soil and groundwater resources becomes
+                    devastating. Thus, we have come up with the idea that if we can segregate the waste items at the
+                    primary level itself, then the
+                    percentage of mixup can be reduced by a great margin. This in turn will also help in increasing the
+                    amount of recyclable items from the waste heap.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--features section-->
+    <section id="features" class="features-area item-full text-center cell-items default-padding">
+        <div class="container">
+            <div class="row features-items">
+                <div class="col-md-4 col-sm-6 equal-height">
+                    <div class="item">
+                        <div class="icon">
+                            <i class="fas fa-hands"></i>
+                        </div>
+                        <div class="info">
+                            <h4>Making It Cleaner</h4>
+                            <p>Making your environment clean by recycling waste</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 equal-height">
+                    <div class="item">
+                        <div class="icon">
+                            <i class="fas fa-dumpster"></i>
+                        </div>
+                        <div class="info">
+                            <h4>Eco-Friendly Junk</h4>
+                            <p>Eco-friendly junk removal methods play a significant role in ensuring that we live in a
+                                clean environment with less or no garbage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 equal-height">
+                    <div class="item">
+                        <div class="icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="info">
+                            <h4>Better Landscapes</h4>
+                            <p>The more items we set out for recycling, the less material will end up in the landfills.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--what we do section-->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="heading text-center">
+                <h2>What We
+                    <span>Do ?</span>
+                </h2>
+                <p>This web application can classify waste with different types of waste materials. <br>Ensure zero waste to
+                    Landfills.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{{ url_for("static",filename="images/Recycling Company Dubai.jpeg") }}" alt="about" class="img-fluid" width="100%" />
+                </div>
+                <div class="col-lg-6">
+                    <h3>Types of waste materials which are use for Recycling:</h3>
+                    <p>Recycling waste material is a huge challenge globally. This is because waste is not only
+                        challenging to sort at the human level, but it is also time consuming and often hazardous. One
+                        promising area of research and innovation that could be used to address this problem is machine
+                        learning and artificial intelligence. Using smart technology to classify waste could be a cost
+                        efficient, safe, and possibly even more accurate method of sorting large amounts of waste in a
+                        timely manner, which could thereby help to improve the recycling rate.</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>Light Blubs
+                            </h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>
+                                Paper
+                            </h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>Plastic
+                            </h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>
+                                Organic
+                            </h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>Glass
+                            </h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>
+                                Batteries
+                            </h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>
+                                Clothes
+                            </h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>
+                                Metal
+                            </h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>
+                                <i class="far fa-star"></i>
+                                E-Waste
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section -->
+    <footer id="contact">
+        <p>&copy Copyright 2022, All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
